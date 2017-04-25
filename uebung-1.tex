@@ -1,0 +1,128 @@
+\chapter{Übung 1}
+
+\section*{Aufgabe 1}
+
+\begin{description}
+	\item[a)] 
+	\[
+		\frac{(a^2 - b^2)^{-2}}{(a + b)^{-3}} \cdot \frac{(a - b)^2}{a + b}
+		= \frac{((a + b)(a - b))^{-2} (a - b)^2}{(a + b)^{-2}}
+		= 1
+	\] 
+	
+	\item[b)]
+	\[
+		\ln(e^{3x} e^{5x}) = \ln(e^{3x + 5x}) 
+		= 8x
+	\]
+	
+	\item[c)]
+	\[
+		\cos(\phi) + \sin(\phi) \tan(\phi) 
+		= \frac{\cos^2(\phi)}{\cos(\phi)} \frac{\sin^2(\phi)}{\cos(\phi)}
+		= \frac{1}{\cos(\phi)} 
+	\]
+\end{description}
+
+\section*{Aufgabe 2}
+
+\begin{description}
+	\item[a)] 
+	\[
+		\sdiv{a \cos(x) + \sin(bx + c)}{x} = - a \sin(x) + \cos(bx + c) b
+	\] 
+	
+	\item[b)]
+	\[
+		\sdiv{(3 + 2x - x^2)e^x}{x} = e^x (3 + 2x - x^2) + (2 - 2x)e^x = e^x (5 - x^2)
+	\]
+	
+	\item[c)]
+	\[
+		\sdiv{(3 + 4x - x^2)^{1/2}}{x} = (3 + 4x - x^2)^{-1/2} (2 - x)
+	\]
+	
+	\item[d)]
+	\[
+		\sdiv{x^x}{x} = x^x (\ln(x) + 1)
+	\]
+\end{description}
+
+\section*{Aufgabe 3}
+Die Ableitungen lauten
+\begin{align*}
+	g'(x) &= 3x^2 - 4x \\	
+	g''(x) &= 6x - 4
+\end{align*}
+und es gilt $g'(x_0) = 0$ genau dann, wenn $x_0 = 0$ oder $x_0 = \frac{4}{3}$. Da $g''(0) = -4 < 0$ liegt dort ein Hochpunkt und da $g''(\frac{4}{3}) = 4 > 0$ liegt dort ein Tiefpunkt.
+
+\section*{Aufgabe 4}
+\begin{description}
+	\item[a)] 
+	\[
+		F(x) = \int \frac{x^4 + 2x^2 - 5x + 1}{x} \mathrm{d}x
+		= \int x^3 + 2x - 5 + \frac{1}{x} \mathrm{d}x
+		= \frac{1}{4} x^4 + x^2 - 5x + \ln(x) + c	
+	\]
+	\item[b)]
+	\begin{description}
+		\item[i)] 
+		\begin{align*}
+			F 
+			&= \int^2_1 \mathrm{d} x \ln(x) \int^\infty_{\ln(x)} \mathrm{d} y e^{-y}
+			= \int^2_1 \ln(x) \left[ - e^{-y} \right]^\infty_{\ln(x)} \mathrm{d} x \\
+			&= \int^2_1 \ln(x) e^{-\ln(x)} \mathrm{d} x
+			= \frac{1}{2} \int^2_1 2 \ln(x) \frac{1}{x} \mathrm{d} x
+			= \frac{1}{2} \left[ \ln^2(x) \right]^2_1
+			= \frac{1}{2} \ln^2(x)
+		\end{align*}
+		
+		\item[ii)] Kopf durch die Wand Methode:
+		\[
+			F(a) = \int^\infty_{-\infty} x e^{-ax^2} \mathrm{d} x 
+			= \left[ -\frac{1}{2a} e^{-ax^2} \right]^\infty_{-\infty}
+			= 0
+		\]
+		
+		Kopf Methode: Die Funktion ist Punktsymmetrisch zum Ursprung, also Integral $=0$.
+		
+		\item[iii)] 
+		\[
+			F(a) = \int^\infty_{\infty} x^2 e^{-ax^2} \mathrm{d} x 
+			= 
+		\]
+	\end{description}
+\end{description}
+
+\section*{Aufgabe 5}
+\begin{description}
+	\item[a)]
+	\[
+		AB - BA
+		= \begin{pmatrix}
+			1 & 7 \\ 6 & -6
+		\end{pmatrix} + 
+		\begin{pmatrix}
+			6 & -2 \\ 1 & -5
+		\end{pmatrix}
+		= \begin{pmatrix}
+			7 & 5 \\ 7 & -11
+		\end{pmatrix}
+	\] 
+	
+	\item[b)]
+	\[
+		\tr[AB - BA] = -4
+	\]
+	
+	\item[c)]
+	\[
+		A^{-1} = \frac{1}{\det A} \begin{pmatrix}
+			2 & -3 \\
+			2 & 1
+		\end{pmatrix}
+		= \frac{1}{8} \begin{pmatrix}
+			2 & -3 \\ 2 & 1
+		\end{pmatrix}
+	\]
+\end{description}

@@ -1,8 +1,12 @@
-\documentclass{article}
+\documentclass{report}
 
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+
+\usepackage{graphicx}
 
 % Randbreite reduzieren
 \usepackage[paper=a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry}
@@ -15,8 +19,20 @@
 \date{\today}
 \author{Daniel}
 
+\newcommand{\dvec}[1]{\dot{\vec{#1}}}
+\newcommand{\sdiv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\mnorm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\mabs}[1]{\left\lvert #1 \right\rvert}
+
+\DeclareMathOperator{\tr}{tr}
+
+
 \begin{document}
 	\maketitle
+	\tableofcontents
 	
-	\include{ch1-introduction}
+	\include{ch0-introduction}
+	\include{ch1-klassischemechanik}
+	
+	\include{uebung-1}
 \end{document}
