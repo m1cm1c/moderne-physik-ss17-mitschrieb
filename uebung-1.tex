@@ -87,10 +87,13 @@ und es gilt $g'(x_0) = 0$ genau dann, wenn $x_0 = 0$ oder $x_0 = \frac{4}{3}$. D
 		Kopf Methode: Die Funktion ist Punktsymmetrisch zum Ursprung, also Integral $=0$.
 		
 		\item[iii)] 
-		\[
-			F(a) = \int^\infty_{\infty} x^2 e^{-ax^2} \mathrm{d} x 
-			= 
-		\]
+		\begin{align*}
+			F(a) &= \int^\infty_{\infty} x^2 e^{-ax^2} \mathrm{d} x 
+			= - \int^\infty_{-\infty} \left( \sdiv{}{a} e^{-ax^2} \right) \mathrm{d} x
+			= -\sdiv{}{a} \int^\infty_{-\infty} e^{-ax^2} \mathrm{d} x
+			= -\sdiv{}{a} \sqrt{\frac{\pi}{a}} \\
+			&= \frac{\sqrt{\pi}}{2} a^{-3/2}
+		\end{align*}
 	\end{description}
 \end{description}
 
