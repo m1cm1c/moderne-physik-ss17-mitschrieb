@@ -29,22 +29,22 @@
 \begin{description}
 	\item[a)] 
 	\[
-		\sdiv{a \cos(x) + \sin(bx + c)}{x} = - a \sin(x) + \cos(bx + c) b
+		\msimplediff{a \cos(x) + \sin(bx + c)}{x} = - a \sin(x) + \cos(bx + c) b
 	\] 
 	
 	\item[b)]
 	\[
-		\sdiv{(3 + 2x - x^2)e^x}{x} = e^x (3 + 2x - x^2) + (2 - 2x)e^x = e^x (5 - x^2)
+		\msimplediff{(3 + 2x - x^2)e^x}{x} = e^x (3 + 2x - x^2) + (2 - 2x)e^x = e^x (5 - x^2)
 	\]
 	
 	\item[c)]
 	\[
-		\sdiv{(3 + 4x - x^2)^{1/2}}{x} = (3 + 4x - x^2)^{-1/2} (2 - x)
+		\msimplediff{(3 + 4x - x^2)^{1/2}}{x} = (3 + 4x - x^2)^{-1/2} (2 - x)
 	\]
 	
 	\item[d)]
 	\[
-		\sdiv{x^x}{x} = x^x (\ln(x) + 1)
+		\msimplediff{x^x}{x} = x^x (\ln(x) + 1)
 	\]
 \end{description}
 
@@ -89,9 +89,9 @@ und es gilt $g'(x_0) = 0$ genau dann, wenn $x_0 = 0$ oder $x_0 = \frac{4}{3}$. D
 		\item[iii)] 
 		\begin{align*}
 			F(a) &= \int^\infty_{\infty} x^2 e^{-ax^2} \mathrm{d} x 
-			= - \int^\infty_{-\infty} \left( \sdiv{}{a} e^{-ax^2} \right) \mathrm{d} x
-			= -\sdiv{}{a} \int^\infty_{-\infty} e^{-ax^2} \mathrm{d} x
-			= -\sdiv{}{a} \sqrt{\frac{\pi}{a}} \\
+			= - \int^\infty_{-\infty} \left( \msimplediff{}{a} e^{-ax^2} \right) \mathrm{d} x
+			= -\msimplediff{}{a} \int^\infty_{-\infty} e^{-ax^2} \mathrm{d} x
+			= -\msimplediff{}{a} \sqrt{\frac{\pi}{a}} \\
 			&= \frac{\sqrt{\pi}}{2} a^{-3/2}
 		\end{align*}
 	\end{description}
