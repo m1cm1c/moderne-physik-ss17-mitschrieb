@@ -40,13 +40,127 @@ Das führt auf die \textbf{Newtonschen Gesetze}:
 
 Wichtige Beispiele für Kräfte:
 
-\begin{itemize}
-	\item Gravitationskraft (schwere Masse = träge Masse): $\vec{F} = -\gamma \frac{M m}{r^2} \hat{r}$, wobei $\hat{r} = \frac{\vec{r}}{\mabs{\vec{r}}}$ und $\gamma$ die Gravitationskonstante ist
+\begin{description}
+	\item[Gravitationskraft (schwere Masse = träge Masse)] $\vec{F} = -\gamma \frac{M m}{r^2} \hat{r}$, wobei $\hat{r} = \frac{\vec{r}}{\mabs{\vec{r}}}$ und $\gamma$ die Gravitationskonstante ist
 	
 		Skizze
 	
 		Speziell auf der Erde: $r = r_e$, $M = M_e$, $\gamma$
 		
 		Damit $F = \underbrace{\gamma \frac{M_e}{r_e^2}}_{=: g} m = mg$ und $g \approx 9.81 m s^{-2}$; die Kraft zeigt nach unten, deswegen nur noch $F$ statt $\vec{F}$
-	\item Coloumbkraft: $\vec{F} = \frac{1}{4 \pi \epsilon_0} \frac{Q_1 Q_2}{r^2} \hat{r}$ zwischen elektrischen Ladungen $Q_1$ und $Q_2$; das sind zwei Zentralkräfte.
+	\item[Coloumbkraft] $\vec{F} = \frac{1}{4 \pi \epsilon_0} \frac{Q_1 Q_2}{r^2} \hat{r}$ zwischen elektrischen Ladungen $Q_1$ und $Q_2$; das sind zwei Zentralkräfte.
+	\item[Lorentzkraft] $\vec{F} = e (\vec{E} + \vec{v} \times \vec{B})$: Ladung $e$, elektrisches Feld $\vec{E}$ und magnetisches Feld $\vec{B}$.
+	\item[harmonischer Oszillator] lineare, stets negative (bezüglich der Bewegung) Kraft: $F = -\alpha \mabs{x}$
+\end{description}
+
+\textbf{Intertialsysteme / Nichtinertialsyseme}: In einem Inertialsystem: kräftefrei = gleichförmige Bewegung. 
+
+Systeme $\Sigma$, $\Sigma'$ sind vollkommen gleichwertig, d.h. die physikalischen Gesetze sind forminvariant (kovariant) unter sogenannten Galilei-Transformationen. Das sind solche, die aus $\vec{r}' = \vec{r} + \vec{v}_0t$ machen, wenn sich $\Sigma$ und $\Sigma'$ mit $\vec{v}_0$ (=const) relativ zueinander bewegen. 
+
+In \textbf{beschleunigten Systemen} gibt es sogenannte \textbf{Scheinkräfte};  zum Beispiel in rotierenden Systemen (Zentrifugalkraft, Corioliskraft).
+
+Weitere Themen:
+\begin{itemize}
+	\item Schwingungsysteme (mit Dämpfung)
+	\item Mehrere Massenpunkte (Eigenschwingungen)
+	\item viel mehr Massenpunkte, "`starre Körper"'; Bewegung von Schwerpunkt + Rotation = "`Kreiselbewegung"'
 \end{itemize}
+
+\section{Lagrange-Mechanik}
+
+Ausgangspunkt: Newton $m \mddotvec{r} = \vec{F}_i + \sum^N_{j \neq i} \vec{F}_{ij}$ für $i, j = 1, \dots, N$. $\vec{F}_i$ ist eine externe Kraft, $\vec{F}_{ij}$ sind Kräfte zwischen beteiligten Teilchen, paarweise. Damit: Problem vollständig formuliert, denn das sind $3N$ gewöhnliche Differentialgleichungen 2. Ordnung. Die sind im Prinzip lösbar mit den entsprechenden Anfangsbedingungen.
+
+\textbf{Probleme}: 
+\begin{itemize}
+	\item Formulierung in Koordinaten $(x, y, z)_i$ ist meist zu kompliziert; damit wird die Lösung hoffnungslos.
+	\item Meist Probleme mit eingeschränkter Geometrie. Zum Beispiel Perle auf kreisförmigem Draht (siehe Abbildung \ref{fig:ch1_perleaufdraht}). $(x, y, z)$ der Perle sinnvoll? $\phi$ viel geeigneter.
+	\begin{figure}
+		\centering
+		\includegraphics{figures/ch1/perleaufdraht}
+		\caption{Die Position der Perle mit $\phi$ auszudrücken ist sinnvoller als mit $(x, y, z)$}
+		\label{fig:ch1_perleaufdraht}
+	\end{figure}
+\end{itemize}
+
+Die $\vec{F}_{ij}$ beschreiben geometrische Beziehungen auf komplizierte Weise $\rightarrow$ \textbf{Zwangskräfte} (im Beispiel die Kräfte, die die Perle auf dem Draht halten). Diese bewirken \textbf{Zwangsbedingungen}, die eigentlich direkt viel einfacher zu formulieren sind.
+
+\textbf{Ziel der Lagrange-Mechanik}: Elimination der Zwangskräfte per verallgemeinerter Koordinaten (meist weniger als vorher)
+
+Zwangsbedingungen sind:
+\begin{itemize}
+	\item A
+	\begin{itemize}
+		\item A1: holonom-shleronom(?): $\frac{\partial f_\nu}{\partial t} = 0$ mit $\nu = 1, \dots, p$ 
+		\item A2: holonom-rheonom: $\frac{\partial f_\nu}{\partial t} \neq 0$ mit $\nu = 1, \dots, p$
+	\end{itemize}
+	\item B
+	\begin{itemize}
+		\item B1: als Ungleichungen $\rightarrow$ keine elimin... Bedingungen
+		\item B2: differentielle Form: ???
+	\end{itemize}
+\end{itemize}
+
+
+\textbf{Beispiele}:
+\begin{itemize}
+	\item Hantel (A1; siehe Abbildung \ref{fig:ch1_hantel}): $f(\vec{r}_i, \vec{r}_2) = 0$ und $(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2 - l^2 = 0$.
+	\begin{figure}
+		\centering
+		\includegraphics{figures/ch1/hantel}
+		\caption{Eine Hantel der Länge $l$.}
+		\label{fig:ch1_hantel}
+	\end{figure}
+	
+	\item Ebene mit variablem Winkel (A2; siehe Abbildung \ref{fig:ch1_schiefeebene}): $\frac{z}{x} = \tan \phi(t)$
+	\begin{figure}
+		\centering
+		\includegraphics{figures/ch1/schiefeebene}
+		\caption{Eine Hantel der Länge $l$.}
+		\label{fig:ch1_schiefeebene}
+	\end{figure}
+\end{itemize}
+
+Holonom: Reduktion der Freiheitsgrade $S = 3N - p$ bei $p$ holonomen Zwangsbedingungen $\rightarrow$ generalisierte Koordinaten, genannt $q_1, \dots, q_S$. Mit $\vec{r}_i = \vec{r}_i(q_1, \dots, q_S, t)$ sind Zwangsbedingungen implizit. Es gibt \textbf{keine} Beziehung $f(q_1, \dots, q_S, t) = 0$, d.h. es können keine Koordinaten eliminiert werden; $q_i$ unabhängig!
+
+Schreibe $\vec{q} = (q_1, \dots, q_S)$ = Vektor aus dem $S$-dimensionalen Konfigurationsraum. Weiter sind $\dot{q}_1, \dots, \dot{q}_S$ die generalisierten Geschwindigkeiten.
+
+\textbf{Bemerkung}: 
+\begin{itemize}
+	\item Mit $\vec{q}_0$, $\mdotvec{q}_0$ als Anfangsbedingungen sollte der Zustand zu jeder Zeit danach (oder davor) zu bestimmen sein.
+	\item $\mset{q_S}$ ist nicht eindeutig, wohl aber die Anzahl $S$ (ergibt sich aus der physikalischen Problemstellung).
+	\item Die $q_i$ haben eine nicht vorgegebene Dimension (müssen keine Längen sein, können z.B. auch Winkel sein). Eventuell ist die physikalische Bedeutung der $q_i$ nicht offensichtlich. Meistens sind es aber geometrische Größe.
+\end{itemize}
+
+\textbf{Beispiele}:
+\begin{enumerate}
+	\item Teilchen auf einer Kugeloberfläche (siehe Abbildung \ref{fig:ch1_kugel}) $\vec{r} = (x, y, z)$; $p = 1$ 
+	
+	\textbf{Zwangsbedingung}: $x^2 + y^2 + z^2 - R^2 = 0$, also $S = 3 - 1 = 2$. 
+	
+	$2$ quadratische Koordinaten, z.b. Winkel $q_1 = \nu$, $q_2 = \phi$
+	\begin{figure}
+		\centering
+		\includegraphics{figures/ch1/kugel}
+		\caption{Kugel}
+		\label{fig:ch1_kugel}
+	\end{figure}
+	
+	$x = R \sin q_1 \cos q_2$, $y = R \sin q_1 \sin q_2$, $z = R \cos q_1$ $\rightarrow$ Zwangsbedingungen sind implizit, denn bei dieser Beschreibung immer erfüllt
+	
+	\item Doppelpendel (siehe Abbildung \ref{fig:ch1_doppelpendel}): zwei Massen $m_1$, $m_2$ = $6$ Freiheitsgrade
+	
+	vier davon sind holonom-shleronom: $z_1 = z_2 = ?$, $x_1^2 + y_1^2 - l_1^2 = 0$, $(x_2 - x_1)^2 + (y_2 - y_1)^2 - l_2^2 = 0$
+	
+	Wie viel generalisierte Koordinaten? $S = 6 - 4 = 2$ $\rightarrow$ zum Beispiel $q_1 = \nu_1$, $q_2 = \nu_2$
+	
+	$x_1 = l_1 \cos q_1$, $y_1 = l_1 \sin q_1$, $z_1 = 0$
+	
+	$x_2 = l_1 \cos q_1 + l_2 \cos q_2$, $y_2 = l_1 \sin q_1 + l_2 \sin q_2$, $z_2 = 0$
+	\begin{figure}
+		\centering
+		\includegraphics{figures/ch1/doppelpendel}
+		\caption{Doppelpendel}
+		\label{fig:ch1_doppelpendel}
+	\end{figure}
+\end{enumerate}
+
