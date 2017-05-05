@@ -167,9 +167,12 @@ Schreibe $\vec{q} = (q_1, \dots, q_S)$ = Vektor aus dem $S$-dimensionalen Konfig
 \section{Das d'Alembertsche Prinzip}
 Ziel: Elimination der Zwangskräfte aus den Bewegungsgleichungen (+ formaleren Einblick in die Mechanik). 
 
-Zuerst Definition der Zwangskräfte: Dazu \textbf{virtuelle Verrückung} $\delta \vec{r}_i$ = willkürliche, momentane durchgeführte und verträglich mit Zwangsbedingungen $\rightarrow$ $\delta t = 0$; hat nichts mit wirklicher Bewegung zu tun. 
+Zuerst Definition der Zwangskräfte: Dazu \textbf{virtuelle Verrückung}.
 
-$\delta$ = virtuelle Verschiebung, $\mathrm{d}$ = tatsächliche Verschiebung; siehe Abbildung \ref{fig:ch1_bspverrueckung}
+\paragraph{Virtuelle Verrückung $\delta \vec r_i$}
+Eine virtuelle Verrückung ist eine willkürliche, virtuelle Koordinatenänderung, momentan ($\delta t = 0$) durchgeführt und verträglich mit Zwangsbedingungen. Hat nichts mit wirklicher Bewegung zu tun.
+
+$\delat$ ist die virtuelle Verrückung; $d$ die tatsächliche Verrückung. Siehe Abbildung \ref{fig:ch1_bspverrueckung}.
 
 \begin{figure}
 	\centering
@@ -202,14 +205,12 @@ Beispiele für Zwangskräfte:
 	\item Teilchen auf glatter Kurve; $m$ bewegt sch nur auf der Bahn, also $\vec{z} \perp \delta \vec{r}$ und somit $\vec{z} \cdot \delta \vec{r} = 0$.
 \end{itemize}
 
-Kurze Erinnerung: totales Differential
+\section{Arten von Ableitungen}
+\subsection{Totales Differenzial}
+Betrachte $f(x_1, x_2, \ldos, x_n)$ mit $\vec x \rightarrow mathbb{R}$. Gesucht ist $df$.\\
 
-$f(x_1, x_2, \dots, x_n)$ Abbildung;
+$df = \frac{\partial f}{\partial x_1} dx_1 + \frac{\partial f}{\partial x_2} dx_2 + \ldots + \frac{\partial f}{\partial x_n} dx_n$\\
 
-wie ändert sich $f$, wenn man an $\vec{x}$ dreht, d.h. $\mathrm{d} f = $?
-
-Linearisiert im "`infinitesimalen"', $\mathrm{d} f = \frac{\partial f}{\partial x_1} \mathrm{d} x + \dots + \frac{\partial f}{\partial x_n} \mathrm{d} x_n$
-
-Oft $f(x_1, \dots, x_n, t)$, schreibe $\frac{\mathrm{d} x_i}{\mathrm{d} t} = \dot{x}_i$.
-
-Damit: $\frac{\mathrm{d} f}{\mathrm{d} t} = \frac{\partial f}{\partial x_1} \frac{\mathrm{d} x_1}{\mathrm{d} t} + \dots + \frac{\partial f}{\partial t} = \frac{\partial f}{\partial x_1} \dot{x}_1 + \dots + \frac{\partial f}{\partial t}$
+Oft: $f(x_1, \ldos, x_n, t)$
+\[ \frac{dx_i}{dt} = \dot x_i \]
+\[ \frac{df}{dt} = \frac{\partial f}{\partial x_i} \frac{d x_i}{d_t} + \frac{\partial f}{\partial x_2} \frac{d x_2}{d t} + \ldots + \frac{\partial f}{\partial t} = \frac{\partial f}{\partial x_1} \dot x_1 + \frac{\partial f}{\partial x_2} \dot x_2 + \frac{\partial f}{\partial x_n} \dot x_n \]
