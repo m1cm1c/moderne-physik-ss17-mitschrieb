@@ -164,3 +164,52 @@ Schreibe $\vec{q} = (q_1, \dots, q_S)$ = Vektor aus dem $S$-dimensionalen Konfig
 	\end{figure}
 \end{enumerate}
 
+\section{Das d'Alembertsche Prinzip}
+Ziel: Elimination der Zwangskräfte aus den Bewegungsgleichungen (+ formaleren Einblick in die Mechanik). 
+
+Zuerst Definition der Zwangskräfte: Dazu \textbf{virtuelle Verrückung} $\delta \vec{r}_i$ = willkürliche, momentane durchgeführte und verträglich mit Zwangsbedingungen $\rightarrow$ $\delta t = 0$; hat nichts mit wirklicher Bewegung zu tun. 
+
+$\delta$ = virtuelle Verschiebung, $\mathrm{d}$ = tatsächliche Verschiebung; siehe Abbildung \ref{fig:ch1_bspverrueckung}
+
+\begin{figure}
+	\centering
+	\includegraphics{figures/ch1/bspverrueckung}
+	\caption{Beispiel für virtuelle Verrückung}
+	\label{fig:ch1_bspverrueckung}
+\end{figure}
+
+Es ist $\mathrm{d} \vec{r} = (\mathrm{d} x, \mathrm{d} z) = (\mathrm{d} x, v_0 \mathrm{d} t)$ und bei der virtuellen Verrückung: $\delta \vec{r} = (\delta x, \delta z) = (\delta x, v_0 \delta t) = (\delta x, 0)$.
+
+Kraft auf Teilchen $i$ per Newton: 
+\[
+	\vec{F}_i = \vec{K}_i + \vec{Z}_i = m_i \mddotvec{r}_i,
+\]
+wobei $\vec{K}_i$ die Kraft entlang der erlaubten Bewegung und $\vec{Z}_i$ die Zwangskraft ist.
+
+Weiter definieren wir die \textbf{virtuelle Arbeit}: $\delta W_i = - \vec{F}_i \delta \vec{R}_i$; vgl. normale Arbeit: $\mathrm{d} W_i = -\vec{F}_i \mathrm{d} \vec{r}_i$.
+
+Wir erhalten
+\[
+	\sum_i (\vec{K}_i - m \mddotvec{r}_i) \cdot \delta \vec{r}_i + \sum_i \vec{Z}_i \cdot \delta \vec{r}_i = 0
+\]
+
+Das führt uns auf das \textbf{Prinzip der virtuellen Arbeit}: $\sum_i \vec{Z}_i \cdot \delta \vec{r}_i = 0$, "`Zwangskräfte verrichten keine Arbeit"'.
+
+Beachte: Nur die Summe ist $0$, nicht unbedingt jeder Summand.
+
+Beispiele für Zwangskräfte: 
+\begin{itemize}
+	\item Teilchen auf glatter Kurve; $m$ bewegt sch nur auf der Bahn, also $\vec{z} \perp \delta \vec{r}$ und somit $\vec{z} \cdot \delta \vec{r} = 0$.
+\end{itemize}
+
+Kurze Erinnerung: totales Differential
+
+$f(x_1, x_2, \dots, x_n)$ Abbildung;
+
+wie ändert sich $f$, wenn man an $\vec{x}$ dreht, d.h. $\mathrm{d} f = $?
+
+Linearisiert im "`infinitesimalen"', $\mathrm{d} f = \frac{\partial f}{\partial x_1} \mathrm{d} x + \dots + \frac{\partial f}{\partial x_n} \mathrm{d} x_n$
+
+Oft $f(x_1, \dots, x_n, t)$, schreibe $\frac{\mathrm{d} x_i}{\mathrm{d} t} = \dot{x}_i$.
+
+Damit: $\frac{\mathrm{d} f}{\mathrm{d} t} = \frac{\partial f}{\partial x_1} \frac{\mathrm{d} x_1}{\mathrm{d} t} + \dots + \frac{\partial f}{\partial t} = \frac{\partial f}{\partial x_1} \dot{x}_1 + \dots + \frac{\partial f}{\partial t}$
