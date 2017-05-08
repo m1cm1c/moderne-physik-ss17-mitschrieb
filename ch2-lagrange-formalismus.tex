@@ -1,0 +1,28 @@
+\chapter{Lagrange-Formalismus}
+Aus der Lagrange-Funktion folgt:
+
+\[ \sum_{j=1}^s [ \dfrac{\dint}{\dint t} \dfrac{\partial L}{\partial \dot q_j} - \dfrac{\partial L}{\partial q_i} ] \delta q_i = 0 \]
+
+Damit folgt die Lagrange-Gleichung 2. Art:
+
+\[ \dfrac{\dint}{\dint t} \dfrac{\partial L}{\partial \dot q_j} - \dfrac{\partial L}{\partial q_j} = 0; j = 1, \ldots, s\]
+
+
+\section{Bemerkungen}
+\begin{itemize}
+    \item Die Zwangskräfte wurden eliminiert.
+    \item Hier sind Energie und Arbeit zentrale Begriffe. Vgl. Kraft und Impuls bei Newton.
+    \item Lagrangegleichungen sind invariant unter Punkttransformation.
+\end{itemize}
+
+
+\section{Zyklische Koordinaten}
+$q_i$ ist eine {\bf zyklische Koordinate}, gdw. die Lagrange-Funktion nicht explizit von $q_i$ abhängt. Die Lagrange-Funktion kann dabei aber dennoch von $\dot q_i$ abhängen.
+
+\[ q_i \text{ ist zyklische Koordinate} \Leftrightarrow \pdv{L}{q_i} = 0 \Leftrightarrow \pdv{L}{\dot q_i} = \text{const.} \]
+
+\[ \dv{}{t} \pdv{L}{\dot q_i} = 0 \Leftrightarrow \pdv{L}{\dot q_i} = \text{const.} = p_i \]
+
+Dabei ist $\pdv{L}{\dot q_i} = p_i}$ der {\bf verallgemeinerte Impuls}.\\
+
+Zyklische Koordinaten führen immer sofort zu einem {\bf Erhaltungssatz}. Möglichst viele generalisierte Koordinaten sollten zyklisch sein.
