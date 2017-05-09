@@ -11,16 +11,29 @@
 
 \usepackage{graphicx}
 
+\usepackage[colorlinks]{hyperref}
+
 % Randbreite reduzieren
 \usepackage[paper=a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry}
 
 % Entfernt das Einrücken von Absätzen 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
+\usepackage{parskip}
 
 \title{Moderne Physik: Vorlesungs- und Übungs-Mitschrieb}
 \author{Daniel Seemaier, Christoph Michelbach}
 \date{\today}
+
+\makeatletter
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=black,
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    bookmarks=true
+}
 
 \newcommand{\mdotvec}[1]{\dot{\vec{#1}}}
 \newcommand{\mddotvec}[1]{\ddot{\vec{#1}}}
