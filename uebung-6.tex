@@ -1,0 +1,104 @@
+\chapter*{Übung 6}
+
+\section*{Aufgabe 13}
+
+Abrollender Kreis mit Mittelpunkt $M(t r_0 | r_0)$. Dann $x(t) = r_0 (t - \cos (t + \phi_x))$ und $y(t) = r_0(1 - \cos(t + \phi_y))$. Da $x(t = 0) \overset{!}{=} 0$ folgt $\phi_x = -\frac{\pi}{2}$ und da $y(t = 0) = 0$ folgt $\phi_y = 0$. Also ist die Parametisierung: $\vec{r}(t) = \mvec{r_0 (t - \sin t) \\ r_0 (1 - \cos t)}$; alles sofern sich der Kreis mit $v = 1 \frac{m}{s}$ bewegt; ansonsten verändert sich der Mittelpunkt entsprechend. Oder man spricht bei $t$ von irgendeinem Parameter $t$ und nicht von der Zeit. 
+
+Bei einer Spiegelung kommt ein Minus vor die $y$-Komponente: $\vec{r}(t) = \mvec{r_0 (t - \sin t) \\ - r_0 (1 - \cos t)}$. Diese Kurve beschreibt die (eine?) Brachistochrone.
+
+\section*{Aufgabe 14}
+
+Zu minimieren ist, wie angegeben: $V(y(x)) = \int \md s \frac{m}{L} g y(x)$. Vereinfachung, da $m$, $L$ und $g$ konstant sind: $\hat{V}(y(x)) = \int \md s y(x)$. Wenn $\hat{V}(y(x))$ minimal ist, dann ist auch $V(y(x))$ minimal.
+
+Wir schreiben 
+\[
+	\md s 
+	= \sqrt{\md x^2 + \md y^2} 
+	= \sqrt{\md x^2 + \left( \frac{\md y}{\md x} \md x \right)^2} 
+	= \sqrt{(1 + y'^2(x)) \md x^2}
+	= \sqrt{1 + y'^2(x)} \md x
+	\text{.}
+\]
+
+Man kann schreiben:
+\[
+	L = \int^a_{-a} \md x \frac{L}{2a} = \int \md s = \int^a_{-a} \md x \sqrt{1 + y'^2(x)}
+	\text{.}
+\]
+
+Daraus folgt gerade die Nebenbedingung (alles rechts von $\md x$ gehört zum Integral!)
+\[
+	h(y(x)) = \int^a_{-a} \md x \sqrt{1 + y'^2(x)} - \frac{L}{2a} \left( = 0 \right)
+	\text{.}
+\]
+
+Wir erhalten das Funktional
+\[
+	S(y(x), \lambda) = \hat{V}(y(x)) + \lambda h(y(x)),
+\]
+und dafür gilt $\frac{\md S}{\md \lambda} h(y(x)) \overset{!}{=} 0$. Einsetzen:
+\begin{align*}
+	S(y(x)) &= \int^a_{-a} \md x y(x) \sqrt{1 + y'^2(x)} + \lambda \left( \sqrt{1 + y'^2(x)} - \frac{L}{2a} \right) \\
+	&= \int^a_{-a} \md x \sqrt{1 + y'^2(x)} \left( y(x) + \lambda \right) - \lambda \frac{L}{2a}
+	\text{.}
+\end{align*}
+
+Jetzt führen wir die Substitution $f(x) = y(x) + \lambda$ ein (beachte: $f'(x) = y'(x)$). Damit kann man umschreiben:
+\[
+	S = \int^a_{-a} \md x \underbrace{\sqrt{1 + f'^2(x)} f(x) - \frac{L}{2a} \lambda}_{= S'}
+	\text{.}
+\]
+
+Nun gilt es, folgende Euler-Lagrange-Gleichung zu lösen:
+\[
+	\frac{\partial S'}{\partial f(x)} = \msimplediff{}{x} \frac{\partial S'}{\partial f'(x)}
+\]
+
+Wenn man die Ableitungen bestimmt einsetzt und weite ableitet, erhält man:
+\begin{align*}
+	\sqrt{1 + f'^2(x)} 
+	&= \msimplediff{}{x} \left( \frac{\lambda f(x) f'(x)}{\lambda \sqrt{1 + f''^2(x)}} \right) \\
+	&= \frac{(f'^2(x) + f(x) f''(x)) \sqrt{1 + f'^2(x)} - f(x) f'(x) \frac{f'(x) f''(x)}{\sqrt{1 + f'^2(x)}}}{1 + f'^2(x)} \\
+	&= (1 + f'^2(x))^{-3/2} \cdot \left( f'^2(x) + f(x) f''(x) + f'^4(x) + f(x) f'^2(x) f''(x) - f(x) f'^2(x) f''(x) \right)
+	\text{.}
+\end{align*}
+
+Den Teiler auf die andere Seite ziehen und ausmultiplizieren:
+\[
+	(1 + f'^2(x))^2 = 1 + 2 f'^2(x) + f'^4(x) = f'^2(x) + f(x) f''(x) + f'^4(x)
+	\text{.}
+\]
+
+Nun noch beides auf eine Seite und man erhält $f'^2(x) - f(x) f''(x) + 1 = 0$.
+
+Wir verfolgen den Hinweis und berechnen
+\[
+	\left( \frac{f''(x)}{f(x)} \right)' = \frac{f'''(x) f(x) - f'(x) f''(x)}{f^2(x)}
+\]
+sowie die Ableitung der Differentialgleichung
+\begin{align*}
+	&~ 2f'(x) f''(x) - f'(x) f''(x) - f(x) f'''(x) = 0 \\
+	\Longleftrightarrow &~ f'(x) f''(x) - f(x) f'''(x) = 0 = -f^2(x) \left( \frac{f''(x)}{f(x)} \right)' = 0
+	\text{.}
+\end{align*}
+
+Mit der Annahme $f(x) = 0$:
+\[
+	\Longleftrightarrow \left( \frac{f''(x)}{f(x)} \right)' = 0 \Longleftrightarrow \frac{f''(x)}{f(x)} = C = \text{const}. \Longleftrightarrow f''(x) = C f(x)
+	\text{.}
+\]
+
+Einsetzen von $f(x) = C_{\lambda_f} e^{\lambda_f x}$ liefert $\lambda_f^2 = C$ und damit 
+\[
+	f(x) = C_1 e^{\sqrt{C}x} + C_2 e^{-\sqrt{C} x} = f(-x)
+	\text{,}
+\]
+denn $f$ ist achsensymmetrisch. Daraus folgt $C_1 = C_2$, also 
+\[
+	f(x) = C_1 \left( e^{\sqrt{C} x} + e^{- \sqrt{C} x} \right) = 2 C_1 \cosh (\sqrt{C} x)
+	\text{.}
+\]
+
+Nun fehlt noch: $y(x) = 2 C_1 \cosh(\sqrt{C} x) - \lambda$.
+
+Wie bestimmt man $C_1$ und $C$? Es muss $y(a) = 0 = y(-a)$, $y'(0) = 0$ sowie $L = \int^a_{-a} \md x \sqrt{1 + y'^2(x)}$ gelten. Mit diesen drei Gleichungen kann man die noch freien Variablen bestimmen.
