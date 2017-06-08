@@ -1,0 +1,95 @@
+\chapter*{Übung 7}
+
+\section*{Aufgabe 15}
+
+Die Lagrangefunktion ist gegeben durch
+\[
+	\mathcal{L}(\vec{r}_1, \vec{r}_2, \mdotvec{r}_1, \mdotvec{r}_2) 
+	= \frac{m_1}{2} \mdotvec{r}_1^{\,2} + \frac{m_2}{2} \mdotvec{r}_2^{\,2} - U(\mabs{\vec{r}_1 - \vec{r}_2})
+	\text{.}
+\]
+
+Aus den gegebenen generalisierten Koordinaten (wobei $M = m_1 + m_2$) $\vec{r} = \vec{r}_1 - \vec{r}_2$ und $\vec{R} = \frac{m_1}{M} \vec{r}_1 + \frac{m_2}{M} \vec{r}_2$ folgert man
+\begin{align*}
+	\vec{r}_1 
+	&= \frac{m_1}{M} \vec{r}_1 + \frac{m_2}{M} \vec{r}_1 
+	= \vec{R} - \frac{m_2}{M} \vec{r}_2 + \frac{m_2}{M} \vec{r}_1
+	= \vec{R} - \frac{m_2}{M} \vec{r} 
+	\text{,} \\
+	\vec{r}_2 
+	&= \frac{m_1}{M} \vec{r}_2 + \frac{m_2}{M} \vec{r}_2
+	= \frac{m_1}{M} \vec{r}_2 + \vec{R} - \frac{m_1}{M} \vec{r}_1
+	= \vec{R} - \frac{m_1}{M} \vec{r}
+	\text{.}
+\end{align*}
+
+Die Lagrangefunktion ist nun
+\begin{align*}
+	\mathcal{L}(\vec{r}, \vec{R}, \mdotvec{r}, \mdotvec{R})
+	&= \frac{m_1}{2} \left( \mdotvec{R}^2 + \frac{2 m_2}{M} \mdotvec{r} \mdotvec{R} + \frac{m_2^2}{M^2} \mdotvec{r}^{\,2} \right)	
+	+ \frac{m_2}{2} \left( \mdotvec{R}^2 - \frac{2 m_1}{M} \mdotvec{r} \mdotvec{R} + \frac{m_1^2}{M^2} \mdotvec{r}^{\,2} \right)
+	- U(\mabs{\vec{r}}) \\
+	&= \frac{M}{2} \mdotvec{R}^2 + \frac{m_1 m_2 (m_1 + m_2)}{2 M^2} \mdotvec{r}^{\,2} - U(\mabs{\vec{r}}) \\
+	&= \frac{M}{2} \mdotvec{R}^2 + \frac{\mu}{2} \mdotvec{r}^{\,2} - U(\mabs{\vec{r}})
+	\text{,}
+\end{align*}
+wobei $\mu = \frac{m_1 m_2}{M}$.
+
+(TODO (ii))
+
+Nun sind die generalisierten Koordinaten $\vec{r} = \vec{r}_1 - \vec{r}_2$ und $\vec{\rho} = \vec{r}_1 + \vec{r}_2$. Wieder drücken wir $\vec{r}_1$ und $\vec{r}_2$ durch die generalisierten Koordinaten aus:
+\[
+	\vec{r}_1 = \frac{\vec{r} + \vec{\rho}}{2}
+	\quad \text{ und } \quad 
+	\vec{r}_2 = \frac{\vec{\rho} - \vec{r}}{2}
+	\text{.}
+\]
+
+Damit ergibt sich dann folgende Lagrangefunktion:
+\begin{align*}
+	\mathcal{L}(\vec{r}, \vec{\rho}, \mdotvec{r}, \mdotvec{\rho})
+	&= \frac{m_1}{8} (\mdotvec{\rho}^{\,2} + \mdotvec{r}^{\,2} + 2 \mdotvec{r} \mdotvec{\rho})
+	+ \frac{m_2}{8} (\mdotvec{\rho}^{\,2} + \mdotvec{r}^{\,2} - 2 \mdotvec{r} \mdotvec{\rho})
+	- U(\mabs{\vec{r}}) \\
+	&= \frac{M}{8} (\mdotvec{\rho}^{\,2} + \mdotvec{r}^{\,2}) + \underbrace{\frac{m_1 - m_2}{4} \mdotvec{r} \mdotvec{\rho}}_{\text{führt zu gekoppelter DGL}} - U(\mabs{\vec{r}})	
+	\text{.}
+\end{align*}
+
+\section*{Aufgabe 16}
+
+\subsection*{a)}
+\begin{itemize}
+	\item $T = \frac{1}{2} m \mdotvec{q}^{\,2}$
+	\item $\mathcal{L} = \frac{1}{2} m (\dot{x}_1^2 + \dot{x}_2^2 + \dot{x}_3^2) - V(x_1, x_2, x_3)$
+	\item $p_i = \frac{\partial \mathcal{L}}{\partial \dot{x}_i}$
+	\item $p_1 = m \dot{x}_1$
+	\item $p_2 = m \dot{x}_2$
+	\item $p_3 = m \dot{x}_3$
+\end{itemize}
+
+\subsection*{b)}
+\begin{itemize}
+	\item $\dot{x}_i = \frac{p_i}{m}$
+	\item $\mdotvec{x} = \frac{\vec{p}}{m}$
+	\item $T(\vec{p}) = \frac{p_1^2 + p_2^2 + p_3^2}{2m} = \frac{\vec{p}^2}{2 m}$
+\end{itemize}
+
+\subsection*{c)}
+\begin{itemize}
+	\item $H = T(\vec{p}) + V(\vec{q}) 
+		= \mdotvec{q} \, \vec{p} - L
+		= \frac{\vec{p}^{\,2}}{m} \left( \frac{\vec{p}^{\,2}}{2 m} - V(\vec{x}) \right)
+		= \frac{\vec{p}^{\,2}}{2 m} + V(\vec{x})$
+	\item $\dot{x}_i = \frac{\partial H(\vec{x}, \vec{p})}{\partial p_i} = \frac{\partial T(\vec{p})}{\partial p_i} = \frac{p_i}{m}$
+	\item $- \dot{p}_i = \frac{\partial H(\vec{x}, \vec{p})}{\partial x_i} = \frac{\partial V(\vec{x})}{\partial x_i}$ $\Longleftrightarrow$ $\dot{p}_i = - \frac{\partial V(\vec{x})}{\partial x_i}$ $\Longrightarrow$ $\ddot{x}_i = \frac{\dot{p}_i}{m} = - \frac{1}{m} \frac{\partial V(\vec{x})}{\partial x_i}$
+	\item $F_i = m \ddot{x}_i = - \frac{\partial V}{\partial x_i}$
+	\item $\vec{F}_i = - \nabla V(\vec{x})$
+	\item Euler-Lagrange-Gleichung:
+	\begin{align*}
+		& \msimplediff{}{t} \left( \frac{\partial \mathcal{L}(\vec{x}, \mdotvec{x})}{\partial \dot{x}_i} \right) - \frac{\partial \mathcal{L}(\vec{x}, \mdotvec{x}}{\partial x_i} 
+		= \msimplediff{}{t} \left( \frac{\partial T(\mdotvec{x})}{\partial \dot{x}_i} \right) + \frac{\partial V(\vec{x})}{\partial x_i} 
+		= \msimplediff{}{t}	(m \dot{x}_i) + \frac{\partial V(\vec{x})}{\partial x_i} = 0 \\
+		\Longleftrightarrow &~ \ddot{x}_i = - \frac{1}{m} \frac{\partial V(\vec{x})}{\partial x_i}
+	\end{align*}
+
+\end{itemize}
