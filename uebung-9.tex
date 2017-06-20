@@ -1,0 +1,193 @@
+\chapter*{Übung 9}
+\section*{Aufgabe 19}
+
+Zu lösen ist
+\begin{align*}
+	\ddot{\phi}_1 + \frac{g}{l} \phi_1 + \frac{k}{m} (\phi_1 - \phi_2) &= 0 \\
+	\ddot{\phi}_2 + \frac{g}{l} \phi_2 + \frac{k}{m} (\phi_2 - \phi_1) &= 0 \text{.}
+\end{align*}
+
+Das schreiben wir um zu
+\begin{align*}
+	\ddot{\phi}_1 &= - \left( \frac{g}{l} + \frac{k}{m} \right) \phi_1 + \frac{k}{m} \phi_2 \\
+	\ddot{\phi}_2 &= \frac{k}{m} \phi_1 - \left( \frac{g}{l} + \frac{k}{m} \right) \phi_2 \text{.}
+\end{align*}
+
+Mit 
+\[
+	M = \begin{pmatrix}
+		- \left( \frac{g}{l} + \frac{k}{m} \right) & \frac{k}{m} \\
+		\frac{k}{m} & - \left( \frac{g}{l} + \frac{k}{m} \right)
+	\end{pmatrix}
+	\quad \text{ und } \quad 
+	\vec{\phi} = \mvec{\phi_1 \\ \phi_2}
+\]
+wird die Gleichung zu $\mddotvec{\phi} = M \vec{\phi}$.
+
+Der Ansatz $\vec{\phi}(t) = \vec{v} \cos(\omega t + \beta)$ wird zweimal abgeleitet:
+\begin{align*}
+	\mdotvec{\phi}(t) &= - \vec{v} \sin(\omega t + \beta) \omega \text{,} \\
+	\mddotvec{\phi}(t) &= - \vec{v} \cos(\omega t + \beta) \omega^2 = - \omega^2 \vec{\phi}(t) \text{.}	
+\end{align*}
+
+Der Ansatz in obige Gleichung eingesetzt führt zur Eigenwertgleichung $- \omega^2 \vec{\phi}(t) = M \vec{\phi}$, also $(M + \omega^2 I_2) \vec{\phi}(t) = 0$ (dabei ist $I_2$ die $2 \times 2$ Einheitsmatrix).
+
+Wir wollen also das Gleichungssystem
+\[
+	\begin{pmatrix}
+		- \left( \frac{g}{l} + \frac{k}{m} - \omega^2 \right) & \frac{k}{m} \\
+		\frac{k}{m} & - \left( \frac{g}{l} + \frac{k}{m} - \omega^2 \right)
+	\end{pmatrix}
+	\mvec{\phi_1 \\ \phi_2}
+	= \mvec{0 \\ 0}
+\]
+lösen. Wir schauen uns die Gleichungen an:
+\[
+	\left\{ 
+	\begin{array}{c}
+		\left( -\frac{g}{l} - \frac{k}{m} + \omega^2 \right) \phi_1 + \frac{k}{m} \phi_2 = 0 \\
+		\frac{k}{m} \phi_1 + \left( - \frac{g}{l} - \frac{k}{m} + \omega^2 \right) \phi_2 = 0	
+	\end{array}
+	\right. \text{.}
+\]
+
+Aus der ersten Gleichung gewinnen wir $\phi_2 = \frac{m}{k} \left( \frac{g}{l} + \frac{k}{m} - \omega^2 \right) \phi_1$, das wir in die zweite Gleichung einsetzen:
+\[
+	\frac{k}{m} \phi_1 = \left( \frac{g}{l} + \frac{k}{m} - \omega^2 \right) \frac{m}{k} \phi_1
+	\quad \Longrightarrow \quad 
+	\phi_1 = \left( \underbrace{\left( \frac{g}{l} + \frac{k}{m} - \omega^2 \right) \frac{k}{m}}_{\overset{!}{=} \pm 1} \right)^2 \phi_1
+	\text{.}
+\]
+
+Für den Fall, dass der Term in der Klammer $= -1$ ist: 
+\[
+	\frac{m}{k} \left( \frac{g}{l} + \frac{k}{m} - \omega^2 \right) = -1
+	\quad \Longrightarrow \quad 
+	\frac{g}{l} + \frac{k}{m} - \omega^2 = - \frac{k}{m} 
+	%\quad \Longrightarrow \quad 
+	%\omega_1^2 = \frac{g}{l} + 2 \frac{k}{m}
+	\quad \Longrightarrow \quad 
+	\omega_1 = \sqrt{\frac{g}{l} + 2 \frac{k}{m}}
+\]
+Der zugehörige Eigenvektor ist $\vec{v}^{\,(1)} = (1, -1)^T$ (Wert für $\omega$ in die Matrix-Gleichung einsetzen, dann sieht man das direkt). Im anderen Fall, dass der Term in der Klammer $= 1$ ist, kommt man auf $\omega_2 = \sqrt{\frac{g}{l}}$ mit Eigenvektor $\vec{v}^{\,(2)} = (1, 1)^T$.
+
+Die allgemeinste Lösung ist nun die Linearkombination beider Lösungen, also 
+\[
+	\vec{\phi}(t) = A_1 \mvec{1 \\ -1} \cos(\omega_1 t + \beta_1) + A_2 \mvec{1 \\ 1} \cos(\omega_2 t + \beta_2)
+	\text{.}
+\]
+
+\section*{Aufgabe 20}
+
+Wir transformieren also $\vec{r}\,' = \lambda_1 R \vec{r} - \vec{v} t - \vec{r}_0$ und $t' = \lambda_0 t + t_0$.
+
+\begin{description}
+	\item[a)] Hier ist die Transformation vereinfacht zu $\vec{r}\,' = \vec{r} - \vec{v} t$ und $t' = t$. Wir setzen $r = (ct, r_x, r_y, r_z)^T$. Die Transformation soll sein:
+	\begin{align*}
+		ct' &= ct + 0 \cdot r_x + 0 \cdot r_y + 0 \cdot r_z \text{,} \\
+		r_x' &= -\frac{v_x}{c} (ct) + 1 \cdot r_x + 0 \cdot r_y + 0 \cdot r_z \text{,} \\
+		r_y' &= -\frac{v_y}{c} (ct) + 0 \cdot r_x + 1 \cdot r_y + 0 \cdot r_z \text{,} \\
+		r_z' &= -\frac{v_z}{c} (ct) + 0 \cdot r_x + 0 \cdot r_y + 1 \cdot r_z \text{.}
+	\end{align*}
+	Darauf führt gerade   
+	\[
+		r' = \Gamma_{G'}'(\vec{v}) r 
+		\quad \text{ mit } \quad 
+		\Gamma_{G'}'(\vec{v}) = \begin{pmatrix}
+			1 & 0 & 0 & 0 \\
+			-\frac{v_x}{c} & 1 & 0 & 0 \\
+			-\frac{v_y}{c} & 0 & 1 & 0 \\
+			-\frac{v_z}{c} & 0 & 0 & 1
+		\end{pmatrix}
+		\text{.}
+	\]
+	
+	\item[b, i)] Die Hintereinanderausführung zweier solcher Transformationen ist 
+	\[
+		\Gamma' \cdot \Gamma 
+		= \begin{pmatrix}
+			1 & 0 & 0 & 0 \\
+			-\frac{v'_x}{c} & 1 & 0 & 0 \\
+			-\frac{v'_y}{c} & 0 & 1 & 0 \\
+			-\frac{v'_z}{c} & 0 & 0 & 1 \\
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			1 & 0 & 0 & 0 \\
+			-\frac{v_x}{c} & 1 & 0 & 0 \\
+			-\frac{v_y}{c} & 0 & 1 & 0 \\
+			-\frac{v_z}{c} & 0 & 0 & 1 
+		\end{pmatrix}
+		= \begin{pmatrix}
+			1 & 0 & 0 & 0 \\
+			-\frac{v'_x + v_x}{c} & 1 & 0 & 0 \\
+			-\frac{v'_y + v_y}{c} & 0 & 1 & 0 \\
+			-\frac{v'_z + v_z}{c} & 0 & 0 & 1 
+		\end{pmatrix}
+		\text{.}
+	\]
+	Das ist also das Gleiche, wie wenn man mit $\vec{v}\,'' = \vec{v}\,' + \vec{v}$ transformiert.
+	
+	\item[b, ii)] Es ist mit \textbf{b, i)}:
+	\[
+		\Gamma(\vec{v}) \left( \Gamma(\vec{v}\,') \Gamma(\vec{v}\,'') \right) 
+		= \Gamma(\vec{v}) \Gamma(\vec{v}\,' + \vec{v}\,'')
+		= \Gamma(\vec{v} + \vec{v}\,' + \vec{v}\,'')
+	\]
+	und 
+	\[
+		\left( \Gamma(\vec{v}) \Gamma(\vec{v}\,') \right) \Gamma(\vec{v}\,'')
+		= \Gamma(\vec{v} + \vec{v}\,') \Gamma(\vec{v}\,'')
+		= \Gamma(\vec{v} + \vec{v}\,' + \vec{v}\,'')
+		\text{.}
+	\]
+	
+	\item[b, iii)]
+	Es ist $\Gamma(\vec{v}) \Gamma(\vec{0}) = \Gamma(\vec{v} + \vec{0}) = \Gamma(\vec{v}) = \Gamma(\vec{0}) \Gamma(\vec{v})$. Also ist $\Gamma(\vec{0}) = I_4$ das neutrale Element.
+	
+	\item[b, iv)] Es ist $\Gamma(\vec{v}) \Gamma(-\vec{v}) = \Gamma(\vec{v} - \vec{v}) = \Gamma(\vec{0})$.
+	
+	\item[c)] Jetzt allgemeinere Transformation: $\vec{r}\,' = R \vec{r} - \vec{v} t$ und $ct' = ct$.  Die Matrix von \textbf{a)} kann man auch schreiben als
+	\[
+		\Gamma_{G'}(\vec{v}) = \begin{pmatrix}
+			1 & \vec{0} \\
+			-\frac{v}{c} & I_3
+		\end{pmatrix}
+		\text{.}
+	\]
+	In der gleichen Schreibweise kann man die neue Transformation ausdrücken mit (so, dass wieder $r' = \Gamma_{G''}(R, \vec{v}) r$ gilt)
+	\[
+		\Gamma_{G''}(R, \vec{v}) = \begin{pmatrix}
+			1 & \vec{0} \\
+			-\frac{\vec{v}}{c} & R
+		\end{pmatrix}
+		\text{.}
+	\]
+	
+	Die Hintereinanderausführung sieht nun so aus:
+	\[
+		\Gamma' \Gamma 
+		= \begin{pmatrix}
+			1 & \vec{0} \\
+			-\frac{\vec{v}\,'}{c} & R'
+		\end{pmatrix} 
+		\begin{pmatrix}
+			1 & \vec{0} \\
+			-\frac{\vec{v}}{c} & R
+		\end{pmatrix}
+		= \begin{pmatrix}
+			1 & \vec{0} \\
+			-\frac{\vec{v}\,'}{c} - R'\frac{\vec{v}}{c} & R' R
+		\end{pmatrix}
+		= \begin{pmatrix}
+			1 & \vec{0} \\
+			- \frac{\vec{v}\,' + R' \vec{v}}{c} & R' R
+		\end{pmatrix}
+		= \begin{pmatrix}
+			1 & \vec{0} \\
+			- \frac{\vec{v}\,''}{c} & R''
+		\end{pmatrix}
+	\]
+	mit $\vec{v}\,'' = \vec{v}\,' + R' \vec{v}$ und $R'' = R' R$.
+ 
+\end{description}
