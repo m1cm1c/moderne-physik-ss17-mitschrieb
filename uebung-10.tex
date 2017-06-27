@@ -1,0 +1,197 @@
+\chapter*{Übung 10}
+
+\section*{Aufgabe 21}
+
+Der Drehimpuls ist 
+\[
+	L = \vec{r} \times \vec{p} = \mvec{L_x \\ L_y \\ L_z} = \mvec{
+		y p_z - z p_y \\
+		z p_x - x p_z \\
+		x p_y - y p_x
+	}
+	\quad \text{ mit } \quad 
+	\vec{r} = \mvec{x \\ y \\ z} 
+	\text{ und }
+	\vec{p} = \mvec{p_x \\ p_y \\ p_z}
+	\text{.}
+\]
+
+Zur Erinnerung: \fbox{$\mpoison{f}{p_i} = \frac{\partial f}{\partial q_i}$}\,. Damit ist
+\begin{align*}
+	\mpoison{L_x}{p_x} &= \frac{\partial (y p_z - z p_y)}{\partial x} = 0 = \{ L_y, p_y \} = \{ L_z, p_z \} \text{,} \\
+	\mpoison{L_x}{p_y} &= \frac{\partial (y p_z - z p_y)}{\partial y} = p_z \text{,}	\\
+	\mpoison{L_x}{p_z} &= - p_y \text{,} \\
+	\mpoison{L_y}{x} &= - p_z \text{,} \\
+	\mpoison{L_y}{z} &= p_x \text{,} \\
+	\mpoison{L_z}{x} &= p_y \text{,} \\
+	\mpoison{L_z}{y} &= - p_x \text{.}
+\end{align*}
+
+Mit der Einsteinschen Summenkonvention kann man das auch so schreiben: $\mpoison{L_i}{p_j} = \left( \sum^3_{k = 1} \right) \epsilon_{ijk} p_k$, wobei 
+\[
+	\epsilon_{ijk} = \left\{ 
+	\begin{array}{cl} 
+		+1 & \text{für $i, j, k$ ist $(1, 2, 3)$, $(2, 3, 1)$ oder $(3, 1, 2)$} \\
+		-1 & \text{für $i, j, k$ ist $(3, 2, 1)$, $(1, 3, 2)$ oder $(2, 1, 3)$} \\
+		0 & \text{für $i = j$ oder $j = k$ oder $i = k$}
+	\end{array}
+	\right.
+	\text{.}
+\]
+Die Summe ist in Klammern, weil man sie bei der Einsteinschen Summenkonvention nicht hinschreibt (der Index $k$ kommt zweimal vor).
+
+Wieder zur Erinnerung: 
+$\mpoison{F}{G} = \sum^3_{i = 1} \frac{\partial F}{\partial q_i} \frac{\partial G}{\partial p_i} - \frac{\partial G}{\partial q_i} \frac{\partial F}{\partial p_i}$. Da $\{ L_x, L_x \} = - \{ L_x, L_x \}$ (antisymmetrisch), ist $\{ L_i, L_i \} = 0$. Für die anderen Komponenten rechnet man
+\begin{align*}
+	\mpoison{L_x}{L_y}
+	&= \mpoison{y p_z - z p_y}{z p_x - x p_z}
+	= \mpoison{y p_z}{z p_x} - \underbrace{\mpoison{y p_z}{x p_z}}_{= 0} - \underbrace{\mpoison{z p_y}{z p_x}}_{= 0} + \mpoison{z p_y}{x p_z} \\
+	&= y \mpoison{p_z}{z} p_x + p_y \mpoison{z}{p_z} x = - y p_x + x p_y = L_z
+	\text{.}
+\end{align*}
+
+Die anderen Rechnungen sind analog. Man erhält $\mpoison{L_i}{L_j} = \left( \sum^3_{k = 1} \right) \epsilon_{ijk} L_k$.
+
+Es ist $\vec{L}^{\,2} = L_x^2 + L_y^2 + L_z^2$ gegeben. Nun rechnet man
+\begin{align*}
+	\mpoison{\vec{L}^{\,2}}{L_x} 
+	=& \mpoison{L_x^2 + L_y^2 + L_z^2}{L_x}
+	= \mpoison{L_y + L_z^2}{L_x}	 \\
+	=& L_y \mpoison{L_y}{L_x} + \mpoison{L_y}{L_x} L_y + L_z \mpoison{L_z}{L_x} + \mpoison{L_z}{L_x} L_z \\
+	=& -L_y L_z - L_z L_y + L_z L_y + L_y L_z = 0 \text{.}
+\end{align*}
+Analog rechnet man $\mpoison{\vec{L}^{\,2}}{L_y} = \mpoison{\vec{L}^{\,2}}{L_z} = 0$.
+
+\section*{Aufgabe 22}
+
+Wir arbeiten mit der Lorentztransformation 
+\[
+	\Lambda_{~\nu}^\mu \left( \vec{\beta} = \frac{\vec{v}}{c} = (\beta, 0, 0) \right) = 
+	\begin{pmatrix}
+		\gamma & - \gamma \beta & 0 & 0 \\
+		- \gamma \beta & \gamma & 0 & 0 \\
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 1
+	\end{pmatrix}
+	\text{.}
+\]
+
+Ein kontravarianter Vektor ist $x^\mu = (ct, x, y, z)^T$. Man sieht, dass die Komponenten $y$ und $z$ invariant unter der Transformation ist; deswegen lassen wir den Teil in der Rechnung weg, d.h. wir arbeiten mit der Matrix $\Lambda_{~\nu}^\mu = \begin{pmatrix}
+		\gamma & - \gamma \beta \\
+		- \gamma \beta & \gamma \beta
+	\end{pmatrix}$.
+	
+\begin{description}
+	\item[a, i)] Man rechnet
+	\[
+		\Lambda_{~\nu}^\mu \left( \Lambda_{~\nu}^\mu \right)^{-1} 
+		= \begin{pmatrix}
+			\gamma^2 (1 - \beta^2) & - \gamma^2 \beta (1 - 1) \\
+			- \gamma^2 \beta (1 - 1) & -\gamma ^2 (\beta^2 - 1)
+		\end{pmatrix}
+		= \begin{pmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{pmatrix}
+		\text{,}
+	\] 
+	denn $\gamma^2 (1 - \beta^2) = \left( \frac{1}{\sqrt{1 - \beta^2}} \right)^2 (1 - \beta^2) = 1$.
+	
+	\item[a, ii)] Wir wollen nachrechnen, dass
+	\[
+		\Lambda_\nu^{~\mu} = \Lambda_\nu^{~\mu} g_{\nu \beta} \Lambda^\beta_{~\alpha} g^{\mu \alpha} = (\Lambda^{-1})^\mu_{~\nu}
+		\text{,}
+	\]
+	wobei 
+	\[
+		g_{\mu \nu} = \begin{pmatrix}
+			1 & 0 & 0 & 0 \\
+			0 & -1 & 0 & 0 \\
+			0 & 0 & -1 & 0 \\
+			0 & 0 & 0 & -1
+		\end{pmatrix}
+		\quad \leadsto \quad 
+		g_{\mu \nu} = \begin{pmatrix}
+			1 & 0 \\
+			0 & -1
+		\end{pmatrix}
+		\text{.}
+	\]
+	
+	Einsetzen:
+	\begin{align*}
+		\dots &= \begin{pmatrix}
+			1 & 0 \\
+			0 & -1
+		\end{pmatrix}	
+		\begin{pmatrix}
+			\gamma & - \gamma \beta \\
+			- \gamma \beta & \gamma
+		\end{pmatrix}
+		\begin{pmatrix}
+			1 & 0 \\
+			0 & -1
+		\end{pmatrix} \\
+		&= \begin{pmatrix}
+			\gamma & - \gamma \beta \\
+			\gamma \beta & - \gamma 
+		\end{pmatrix}
+		\begin{pmatrix}
+			1 & 0 \\ 
+			0 & -1
+		\end{pmatrix} \\
+		&= \begin{pmatrix}
+			\gamma & \gamma \beta \\
+			\gamma \beta & \gamma 
+		\end{pmatrix} 
+		= (\Lambda^{-1})^\mu_{~\nu}
+		\text{.}
+	\end{align*}
+	
+	\item[a, iii)] $x^\mu$ ist ein Tensor 1. Stufe, und das bedeutet $x'^\mu = \Lambda^\mu_{~\nu} x^\nu$, also 
+	\[
+		\mvec{c t' \\ x'} = \begin{pmatrix}
+			\gamma & - \gamma \beta \\
+			- \gamma \beta & \gamma
+		\end{pmatrix} \mvec{ct \\ x}
+		= \begin{pmatrix}
+			c \gamma \left( t - \beta \frac{v}{c} \right) \\
+			\gamma (x - \beta c t) 
+		\end{pmatrix}
+		\text{.}
+	\]
+
+	\item[a, iv)] Zum kovarianten Vektor: 
+	\[
+		x'_\mu 
+		= \Lambda_\mu^{~\nu} x_\mu 
+		= \begin{pmatrix}
+			\gamma & \gamma \beta \\
+			\gamma \beta & \gamma
+		\end{pmatrix} \mvec{ct \\ -x}
+		= \mvec{c \gamma \left( t - \beta \frac{x}{c} \right) \\ - \gamma (x - \beta c t)}
+		\text{.}
+	\] 
+	
+	\item[a, v)] Es ist $x_\mu x^\mu = x^\mu x_\mu = \mvec{ct \\ -x \\ -y \\ -z} \mvec{ct \\ x \\ y \\ z} = (ct)^2 - (x^2 + y^2 + z^2)$ und 
+	\begin{align*}
+		x'_\mu x'^\mu 
+		&= \mvec{ c \gamma t - \beta \frac{x}{c} \\ - \gamma (x - \beta c t) \\ -y \\ -z} \mvec{ c \gamma \left( t - \beta \frac{x}{c} \right) \\ \gamma (x - \beta c t) \\ y \\ z}
+		= c^2 \gamma^2 \left( t - \beta \frac{x}{c} \right)^2 - c^2 \gamma^2 \left( \frac{x}{c} - \beta t \right)^2 - y^2 - z^2 \\
+		&= c^2 \gamma^2 (1 - \beta^2) \left( t^2 - \frac{x^2}{c^2} \right) - y^2 - z^2
+		= c^2 t^2 - x^2 - y^2 - z^2
+		\text{.}
+	\end{align*}
+	Das Skalarprodukt ist also invariant unter der Lorenztransformation.
+	
+	\item[b, i)] Es ist $x_\mu x^\mu = g_{\mu \nu} x^\nu x^\mu$, denn $x_\mu = g_{\mu \nu} x^\nu$. Mit dem Tensor $g_{\mu \nu}$ kann man also einfach Indizes nach unten bzw. nach oben ziehen. Also ist
+	\begin{align*}
+		x'_\mu x'^\mu 
+		&= g_{\mu \nu} x'^\nu x'^\mu 
+		= g_{\mu \nu} \Lambda^\mu_{~\alpha} x^\alpha \Lambda^\nu_{~\beta} x^\beta
+		= \underbrace{\Lambda^\mu_{~\alpha} g_{\mu \nu} \Lambda^\nu_{~\beta}}_{\text{Lorentztansf. der Metrik}} x^\alpha x^\beta \\
+		&= g_{\alpha \beta} x^\alpha x^\beta = x_\beta x^\beta = x_\mu x^\mu
+		\text{.}
+	\end{align*}
+	Wie der Index am Ende heißt ist egal, da es nur noch einen gibt.
+\end{description}
