@@ -194,4 +194,24 @@ Ein kontravarianter Vektor ist $x^\mu = (ct, x, y, z)^T$. Man sieht, dass die Ko
 		\text{.}
 	\end{align*}
 	Wie der Index am Ende heißt ist egal, da es nur noch einen gibt.
+	
+	\item[b, ii)] Es ist 
+	\begin{align*}
+		F'_{\mu \nu} F'^{\mu \nu} 
+		&= g_{\alpha \mu} g_{\beta \nu} F'^{\alpha \beta} F'^{\mu \nu} \\
+		&= g_{\alpha \mu} g_{\beta \nu} \Lambda^\alpha_{~\alpha'} \Lambda^\beta_{~\beta'} F^{\alpha' \beta'} \Lambda^\mu_{~\mu'} \Lambda^\nu_{~\nu'} F^{\mu' \nu'} \\
+		&= \underbrace{\Lambda^\alpha_{~\alpha'} g_{\alpha \mu} \Lambda^\mu_{~\mu'}}_{g_{\alpha' \mu'}} \underbrace{\Lambda^\beta_{~\beta'} g_{\beta \nu} \Lambda^\nu_{~\nu'}}_{g_{\beta' \nu'}} F^{\alpha' \beta'} F^{\mu' \nu'} \\
+		&= F_{\mu' \nu'} F^{\mu' \nu'}
+		\text{.}
+	\end{align*}
+	
+	\item[b, iii)] Zu zeigen ist, dass $\left( \Lambda^{-1} \right)^\mu_{~\nu} \Lambda^\nu_{~\sigma} = \delta^\mu_\sigma$. Dazu rechnet man
+	\[
+		\left( \Lambda^{-1} \right)^\mu_{~\nu} \Lambda^\nu_{~\sigma}
+		= \Lambda_\nu^{~\mu} \Lambda^\nu_{~\sigma}
+		= g_{\nu \nu'} \Lambda^\nu_{\mu'} g^{\mu \mu'} \Lambda^\nu_{~\sigma}
+		= \underbrace{\Lambda^\nu_{~\sigma} g_{\nu \nu'} \Lambda^{\nu'}_{~\mu'}}_{g_{\sigma \mu'}} g^{\mu \mu'}
+		= \delta^\mu_\sigma
+		\text{.}
+	\]
 \end{description}
