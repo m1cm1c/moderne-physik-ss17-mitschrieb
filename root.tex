@@ -20,6 +20,8 @@
 % Entfernt das Einrücken von Absätzen 
 \usepackage{parskip}
 
+\usepackage{siunitx}
+
 \title{Moderne Physik: Vorlesungs- und Übungs-Mitschrieb}
 \author{Daniel Seemaier, Christoph Michelbach}
 \date{\today}
@@ -44,11 +46,12 @@
 \newcommand{\mvec}[1]{\begin{pmatrix} #1 \end{pmatrix}}
 \newcommand{\md}{\mathrm{d}}
 \newcommand{\mset}[1]{\left\{ #1 \right\}}
+\newcommand{\mimpuls}[1]{\ensuremath{p_#1}}
+\newcommand{\mpoison}[2]{\ensuremath{\{ #1, \, #2 \}}}
 \newcommand{\dint}{\mathrm{d}} % d beim Ableiten und Integrieren
 
 \begin{document}
 	\maketitle
-	\tableofcontents
 
 	\setcounter{chapter}{-1}
 	\include{ch0-introduction}
@@ -59,6 +62,15 @@
 	\include{uebung-1}
 	\include{uebung-2}
 	\include{uebung-3}
+	\include{uebung-4}
+	\include{uebung-5}
+	\include{uebung-6}
+	\include{uebung-7}
+	\include{uebung-8}
+	\include{uebung-9}
+	\include{uebung-10}
+	\include{uebung-11}
+	\include{uebung-12}
 \end{document}
 
 %%% Local Variables:
